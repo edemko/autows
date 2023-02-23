@@ -1,0 +1,55 @@
+cabal-version: 3.0
+name: autows
+version: 0.0.1.0
+-- synopsis: 
+-- description:
+category: Text
+homepage: https://github.com/edemko/autows
+bug-reports: https://github.com/edemko/autows/issues
+author: Marseille Bouchard
+maintainer: zankoku.okuno@gmail.com
+copyright: 2023 Marseille Bouchard
+license: BSD-3-Clause
+license-file: LICENSE
+extra-source-files: README.md, CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/edemko/autows
+
+library
+  hs-source-dirs: src
+  exposed-modules:
+  -- other-modules:
+  build-depends:
+    , base >=4.11.1
+  default-language: Haskell2010
+  ghc-options: -O2 -Wall -Wunticked-promoted-constructors
+
+-- executable autows
+--   hs-source-dirs: app-autows
+--   main-is: Main.hs
+--   -- other-modules:
+--   build-depends:
+--     , autows
+--     , base
+--     , newline
+--     , optparse-applicative >=0.16 && <0.18
+--     , reverse-list >=0.2
+--     , text >=2.0 && <3
+--   default-language: Haskell2010
+--   ghc-options: -Wall -O2 -threaded -Wunticked-promoted-constructors
+
+executable autotab
+  hs-source-dirs: app-autotab
+  main-is: Main.hs
+  -- other-modules:
+  build-depends:
+    , autows
+    , base
+    , newline
+    , optparse-applicative >=0.16 && <0.18
+    , reverse-list >=0.2
+    , text >=2.0 && <3
+  default-language: Haskell2010
+  ghc-options: -Wall -O2 -threaded -Wunticked-promoted-constructors
